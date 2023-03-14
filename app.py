@@ -92,7 +92,7 @@ if pdf_file:
             text_data, nbPages = convert_pdf_to_txt_pages(pdf_file)
             totalPages = "Pages: "+str(nbPages)+" in total"
         st.info(totalPages)
-        zipPath = save_pages(text_data)
+        #zipPath = save_pages(text_data)
         # download text data   
         #with open(zipPath, "rb") as fp:
             #btn = st.download_button(
