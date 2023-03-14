@@ -4,8 +4,12 @@ import pytesseract
 from pytesseract import Output, TesseractError
 from functions import convert_pdf_to_txt_pages, convert_pdf_to_txt_file, save_pages, displayPDF, images_to_txt
 
-st.set_page_config(page_title="PDF to Text")
 
+# Streamlit Dashboard          
+st.set_page_config(page_title ="GlobalHRIS", page_icon =":guardsman:", layout ="wide")
+st.image("logo.png", width = 400)
+st.title("Global HR Implementation Services Limited")
+st.subheader("Payslip PDF to Text file")
 
 html_temp = """
             <div style="background-color:{};padding:1px">
@@ -42,9 +46,7 @@ with st.sidebar:
     Simply load your PDF and convert it to single-page or multi-page text.
     """)
     st.markdown(html_temp.format("rgba(55, 53, 47, 0.16)"),unsafe_allow_html=True)
-    st.markdown("""
-    Made by [@nainia_ayoub](https://twitter.com/nainia_ayoub) 
-    """)
+   
     
 
 pdf_file = st.file_uploader("Load your PDF", type="pdf")
