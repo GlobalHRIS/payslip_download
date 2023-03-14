@@ -94,13 +94,13 @@ if pdf_file:
         st.info(totalPages)
         zipPath = save_pages(text_data)
         # download text data   
-        #with open(zipPath, "rb") as fp:
-            #btn = st.download_button(
-                #label="Download ZIP (txt)",
-                #data=fp,
-                #file_name="pdf_to_txt.zip",
-                #mime="application/zip"
-            #)
+        with open(zipPath, "rb") as fp:
+            btn = st.download_button(
+                label="Download ZIP (txt)",
+                data=fp,
+                file_name="pdf_to_txt.zip",
+                mime="application/zip"
+            )
 
     
     
