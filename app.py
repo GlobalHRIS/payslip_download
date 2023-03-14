@@ -43,13 +43,13 @@ with st.sidebar:
     st.markdown(html_temp.format("rgba(55, 53, 47, 0.16)"),unsafe_allow_html=True)
     st.markdown("""
     # How does it work?
-    Simply load your PDF and convert it to single-page or multi-page text.
+    Simply load your Payslip as PDF and convert it to single-page or multi-page text.
     """)
     st.markdown(html_temp.format("rgba(55, 53, 47, 0.16)"),unsafe_allow_html=True)
    
     
 
-pdf_file = st.file_uploader("Load your PDF", type="pdf")
+pdf_file = st.file_uploader("Load your Payslip", type="pdf")
 hide="""
 <style>
 footer{
@@ -102,37 +102,5 @@ if pdf_file:
                 mime="application/zip"
             )
 
-    st.markdown('''
-    <a target="_blank" style="color: black" href="https://twitter.com/intent/tweet?text=You%20can%20extract%20text%20from%20your%20PDF%20using%20this%20PDF%20to%20Text%20streamlit%20app%20by%20@nainia_ayoub!%0A%0Ahttps://nainiayoub-pdf-text-data-extractor-app-p6hy0z.streamlit.app/">
-        <button class="btn">
-            Spread the word!
-        </button>
-    </a>
-    <style>
-    .btn{
-        display: inline-flex;
-        -moz-box-align: center;
-        align-items: center;
-        -moz-box-pack: center;
-        justify-content: center;
-        font-weight: 400;
-        padding: 0.25rem 0.75rem;
-        border-radius: 0.25rem;
-        margin: 0px;
-        line-height: 1.6;
-        color: rgb(49, 51, 63);
-        background-color: #fff;
-        width: auto;
-        user-select: none;
-        border: 1px solid rgba(49, 51, 63, 0.2);
-        }
-    .btn:hover{
-        color: #00acee;
-        background-color: #fff;
-        border: 1px solid #00acee;
-    }
-    </style>
-    ''',
-    unsafe_allow_html=True
-    )
+    
     
