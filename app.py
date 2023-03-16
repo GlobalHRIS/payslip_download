@@ -84,45 +84,25 @@ if pdf_file:
 
         st.info(totalPages)
         st.download_button("Download Payslip as txt file", text_data_f)
-    else:
-        if ocr_box:
-            text_data, nbPages = images_to_txt(path, languages[option])
-            totalPages = "Pages: "+str(nbPages)+" in total"
-        else:
-            text_data, nbPages = convert_pdf_to_txt_pages(pdf_file)
-            totalPages = "Pages: "+str(nbPages)+" in total"
-        st.info(totalPages)
-        zipPath = save_pages(text_data)
+    #else:
+        #if ocr_box:
+            #text_data, nbPages = images_to_txt(path, languages[option])
+            #totalPages = "Pages: "+str(nbPages)+" in total"
+       # else:
+            #text_data, nbPages = convert_pdf_to_txt_pages(pdf_file)
+            #totalPages = "Pages: "+str(nbPages)+" in total"
+        #st.info(totalPages)
+        #zipPath = save_pages(text_data)
         # download text data   
-        with open(zipPath, "rb") as fp:
-            btn = st.download_button(
-                label="Download ZIP (txt)",
-                data=fp,
-                file_name="pdf_to_txt.zip",
-                mime="application/zip"
-	    )
+        #with open(zipPath, "rb") as fp:
+            #btn = st.download_button(
+                #label="Download ZIP (txt)",
+                #data=fp,
+                #file_name="pdf_to_txt.zip",
+                #mime="application/zip"
+	    #)
 	
-txt_file = st.file_uploader("Load your Payslip as Text", type="txt")
-hide="""
-<style>
-footer{
-	visibility: hidden;
-    	position: relative;
-}
-.viewerBadge_container__1QSob{
-  	visibility: hidden;
-}
-#MainMenu{
-	visibility: hidden;
-}
-<style>
-"""
-st.markdown(hide, unsafe_allow_html=True)	    
-if textOutput == 'CSV file(.csv)':
-    df = pd.read_csv(txt_file, delimiter='\t')
-    data = df.to_csv('output.csv', index=False)
-    st.success('File converted successfully!')
-st.download_button("Download Payslip as csv file", data)
+
      
 
 	
