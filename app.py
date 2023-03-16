@@ -35,13 +35,11 @@ languages = {
 
 with st.sidebar:
 	st.title(":outbox_tray: PDF to Text")
+	ocr_box = st.checkbox('Enable OCR (Scanned Payslip)')
 	textOutput = st.selectbox("How do you want your output text?",
 				  ('Text file (.txt)', 'CSV file(.csv)')
-				  ocr_box = st.checkbox('Enable OCR (Scanned Payslip)')
-			      
-			      
-			      
-			     			      
+				  
+			     	      
 
 	    
     st.markdown(html_temp.format("rgba(55, 53, 47, 0.16)"),unsafe_allow_html=True)
