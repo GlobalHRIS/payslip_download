@@ -101,19 +101,17 @@ if pdf_file:
                 file_name="pdf_to_txt.zip",
                 mime="application/zip"
 		    
-     if textOutput == 'CSV file(.csv)':
-		    # read text file into pandas dataframe
-		    df = pd.read_csv(file, delimiter='\t')
-		    # write dataframe to csv file
-		    df.to_csv('output.csv', index=False)
-		    # display success message
-		    st.success('File converted successfully!')
-		    with open(file, 'rb') as f:
-		    	data = f.read()
-		    	b64 = base64.b64encode(data).decode('utf-8')
-		    	href = f'<a href="data:application/octet-stream;base64,{b64}" download="output.csv">Download CSV file</a>'
-		    	return href    
-            )
+  if textOutput == 'CSV file(.csv)':
+    df = pd.read_csv(file, delimiter='\t')
+    df.to_csv('output.csv', index=False)
+    st.success('File converted successfully!')
+    with open(file, 'rb') as f:
+      data = f.read()
+      b64 = base64.b64encode(data).decode('utf-8')
+      href = f'<a href="data:application/octet-stream;base64,{b64}" download="output.csv">Download CSV file</a>'
+      return href
+      )
+
 	
 
 
