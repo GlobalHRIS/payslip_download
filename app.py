@@ -84,23 +84,23 @@ if pdf_file:
 
         st.info(totalPages)
         st.download_button("Download Payslip as txt file", text_data_f)
-    #else:
-        #if ocr_box:
-            #text_data, nbPages = images_to_txt(path, languages[option])
-            #totalPages = "Pages: "+str(nbPages)+" in total"
-       # else:
-            #text_data, nbPages = convert_pdf_to_txt_pages(pdf_file)
-            #totalPages = "Pages: "+str(nbPages)+" in total"
-        #st.info(totalPages)
-        #zipPath = save_pages(text_data)
+    else:
+        if ocr_box:
+            text_data, nbPages = images_to_txt(path, languages[option])
+            totalPages = "Pages: "+str(nbPages)+" in total"
+        else:
+            text_data, nbPages = convert_pdf_to_txt_pages(pdf_file)
+            totalPages = "Pages: "+str(nbPages)+" in total"
+        st.info(totalPages)
+        zipPath = save_pages(text_data)
         # download text data   
-        #with open(zipPath, "rb") as fp:
-            #btn = st.download_button(
-                #label="Download ZIP (txt)",
-                #data=fp,
-                #file_name="pdf_to_txt.zip",
-                #mime="application/zip"
-	    #)
+        with open(zipPath, "rb") as fp:
+            btn = st.download_button(
+                label="Download ZIP (txt)",
+                data=fp,
+                file_name="pdf_to_txt.zip",
+                mime="application/zip"
+	    )
 	
 
      
