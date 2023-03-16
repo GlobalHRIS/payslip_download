@@ -10,7 +10,7 @@ from functions import convert_pdf_to_txt_pages, convert_pdf_to_txt_file, save_pa
 st.set_page_config(page_title ="GlobalHRIS", page_icon =":guardsman:", layout ="wide")
 st.image("logo.png", width = 300)
 st.title("Global HR Implementation Services Limited")
-st.subheader("Payslip PDF to Text file")
+st.subheader("AI PDF to Text Convereter Tool")
 
 html_temp = """
             <div style="background-color:{};padding:1px">
