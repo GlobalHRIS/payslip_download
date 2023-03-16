@@ -103,8 +103,8 @@ if pdf_file:
                 mime="application/zip"
 	    )
 	
-st.title('Text to CSV Converter')
-file = st.file_uploader("Upload a text file", type=["txt"])
+st.title(' Convert payslip from Text to CSV file')
+file = st.file_uploader("Upload your payslip as text file", type=["txt"])
 
 if file:
     st.write(f"Uploading file: {file.name}")
@@ -113,11 +113,11 @@ if file:
     for line in file:
         data.append(line.strip().split())
         df = pd.DataFrame(data)
-        df.to_csv('output.csv', index=False)
+        df.to_csv('payslip.csv', index=False)
     st.download_button(
         label="Download CSV",
-        data=open('output.csv', 'rb').read(),
-        file_name='output.csv',
+        data=open('payslip.csv', 'rb').read(),
+        file_name='payslip.csv',
         mime='text/csv'
     )
     
