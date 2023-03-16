@@ -36,7 +36,7 @@ languages = {
 }
 
 with st.sidebar:
-    st.title(":outbox_tray: PDF to Text")
+    st.title(":outbox_tray: AI Payslip Converter")
     textOutput = st.selectbox(
         "How do you want your output text?",
         ('One text file (.txt)', 'Text file per page (ZIP)'))
