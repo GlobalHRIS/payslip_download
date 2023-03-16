@@ -115,7 +115,7 @@ if file:
         df = pd.DataFrame(data)
         df.to_csv('payslip.csv', index=False)
     st.download_button(
-        label="Download CSV",
+        label="Download Payslip as CSV",
         data=open('payslip.csv', 'rb').read(),
         file_name='payslip.csv',
         mime='text/csv'
