@@ -101,8 +101,8 @@ if pdf_file:
                 file_name="pdf_to_txt.zip",
                 mime="application/zip"
 		    
-     elsif textOutput == 'CSV file(.csv)':
-		     # read text file into pandas dataframe
+     if textOutput == 'CSV file(.csv)':
+		    # read text file into pandas dataframe
 		    df = pd.read_csv(file, delimiter='\t')
 		    # write dataframe to csv file
 		    df.to_csv('output.csv', index=False)
