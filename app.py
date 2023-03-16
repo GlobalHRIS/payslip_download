@@ -3,7 +3,7 @@ import pdf2image
 import pytesseract
 import base64
 from pytesseract import Output, TesseractError
-from functions import convert_pdf_to_txt_pages, convert_pdf_to_txt_file, save_pages, displayPDF, images_to_txt, convert_to_csv
+from functions import convert_pdf_to_txt_pages, convert_pdf_to_txt_file, save_pages, displayPDF, images_to_txt
 
 
 # Streamlit Dashboard          
@@ -38,7 +38,7 @@ with st.sidebar:
     st.title(":outbox_tray: PDF to Text")
     textOutput = st.selectbox(
         "How do you want your output text?",
-        ('One text file (.txt)', 'Text file per page (ZIP)'))
+        ('One text file (.txt)', 'CSV file(.csv)', 'Text file per page (ZIP)'))
     ocr_box = st.checkbox('Enable OCR (scanned document)')
     
     st.markdown(html_temp.format("rgba(55, 53, 47, 0.16)"),unsafe_allow_html=True)
@@ -100,5 +100,21 @@ if pdf_file:
                 data=fp,
                 file_name="pdf_to_txt.zip",
                 mime="application/zip"
+		    
+     elsif textOutput == 'CSV file(.csv)':
+		     # read text file into pandas dataframe
+		    df = pd.read_csv(file, delimiter='\t')
+		    # write dataframe to csv file
+		    df.to_csv('output.csv', index=False)
+		    # display success message
+		    st.success('File converted successfully!')
+		    with open(file, 'rb') as f:
+		    	data = f.read()
+		    	b64 = base64.b64encode(data).decode('utf-8')
+		    	href = f'<a href="data:application/octet-stream;base64,{b64}" download="output.csv">Download CSV file</a>'
+		    	return href    
             )
+	
+
+
 
