@@ -126,8 +126,8 @@ if textOutput == 'CSV file(.csv)':
       data = f.read()
       b64 = base64.b64encode(data).decode('utf-8')
       href = f'<a href="data:application/octet-stream;base64,{b64}" download="output.csv">Download CSV file</a>'
-      return href
-      )
+      st.download_button("Download Payslip as txt file", text_data_f)
+     
 
 	
 
