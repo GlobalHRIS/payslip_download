@@ -34,10 +34,10 @@ languages = {
 }
 
 with st.sidebar:
-    st.title(":outbox_tray: PDF to Text")
+    st.title(":outbox_tray: Payslip PDF to Text")
     textOutput = st.selectbox(
         "How do you want your output text?",
-        ('One text file (.txt)', 'CSV file(.csv)'))
+        ('One text file (.txt)', 'Zip file(.zip)'))
     ocr_box = st.checkbox('Enable OCR (scanned Payslip)')
     
     st.markdown(html_temp.format("rgba(55, 53, 47, 0.16)"),unsafe_allow_html=True)
