@@ -25,7 +25,7 @@ html_temp = """
 # """)
 # st.markdown(html_temp.format("rgba(55, 53, 47, 0.16)"),unsafe_allow_html=True)
 st.markdown("""
-    #### Convert your Payslip from PDF to Text file
+    #### Convert Payslip from PDF to Text file
     
 """)
 languages = {
