@@ -35,7 +35,9 @@ languages = {
 
 with st.sidebar:
     st.title(":outbox_tray: PDF to Text")
-    textOutput = st.checkbox('One text file (.txt)')
+    textOutput = st.selectbox(
+        "How do you want your output text?",
+        ('One text file (.txt)', 'Text file per page (ZIP)'))
     ocr_box = st.checkbox('Enable OCR (scanned document)')
     
     st.markdown(html_temp.format("rgba(55, 53, 47, 0.16)"),unsafe_allow_html=True)
