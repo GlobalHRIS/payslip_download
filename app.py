@@ -1,8 +1,9 @@
 import streamlit as st
 import pdf2image
 import pytesseract
+import base64
 from pytesseract import Output, TesseractError
-from functions import convert_pdf_to_txt_pages, convert_pdf_to_txt_file, save_pages, displayPDF, images_to_txt
+from functions import convert_pdf_to_txt_pages, convert_pdf_to_txt_file, save_pages, displayPDF, images_to_txt, convert_to_csv
 
 
 # Streamlit Dashboard          
