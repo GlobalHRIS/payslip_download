@@ -19,7 +19,7 @@ html_temp = """
             """
 
 # st.markdown("""
-#     ## :outbox_tray: Convert PDF to Text
+#     ## :outbox_tray: PDF to Text Converter
     
 # """)
 # st.markdown(html_temp.format("rgba(55, 53, 47, 0.16)"),unsafe_allow_html=True)
