@@ -37,68 +37,62 @@ with st.sidebar:
   st.title(":outbox_tray: PDF to Text")
   textOutput = st.selectbox("How do you want your output text?",('Text file (.txt)', 'CSV file(.csv)')
   ocr_box = st.checkbox('Enable OCR (Scanned Payslip)')
-				  
-			     	      
 
-	    
     st.markdown(html_temp.format("rgba(55, 53, 47, 0.16)"),unsafe_allow_html=True)
     st.markdown("""
     # How does it work?
     Simply load your Payslip as PDF and convert it to single-page or multi-page text.""")
     st.markdown(html_temp.format("rgba(55, 53, 47, 0.16)"),unsafe_allow_html=True)
-	    
-pdf_file = st.file_uploader("Load your Payslip in pdf format", type="pdf")
-hide="""
-<style>
-footer{
-	visibility: hidden;
-    	position: relative;
-}
-.viewerBadge_container__1QSob{
-  	visibility: hidden;
-}
-#MainMenu{
-	visibility: hidden;
-}
-<style>
-"""
-st.markdown(hide, unsafe_allow_html=True)
-if pdf_file:
-    path = pdf_file.read()
-    # display document
-    with st.expander("Display document"):
-        displayPDF(path)
-    if ocr_box:
-        option = st.selectbox('Select the document language', list(languages.keys()))
-    # pdf to text
-    if textOutput == 'One text file (.txt)':
-        if ocr_box:
-            texts, nbPages = images_to_txt(path, languages[option])
-            totalPages = "Pages: "+str(nbPages)+" in total"
-            text_data_f = "\n\n".join(texts)
-        else:
-            text_data_f, nbPages = convert_pdf_to_txt_file(pdf_file)
-            totalPages = "Pages: "+str(nbPages)+" in total"
+        
+  pdf_file = st.file_uploader("Load your Payslip in pdf format", type="pdf")
+  hide="""
+  <style>
+  footer{
+    visibility: hidden;
+        position: relative;
+  }
+  .viewerBadge_container__1QSob{
+      visibility: hidden;
+  }
+  #MainMenu{
+    visibility: hidden;
+  }
+  <style>
+  """
+  st.markdown(hide, unsafe_allow_html=True)
+  if pdf_file:
+      path = pdf_file.read()
+      # display document
+      with st.expander("Display document"):
+          displayPDF(path)
+      if ocr_box:
+          option = st.selectbox('Select the document language', list(languages.keys()))
+      # pdf to text
+      if textOutput == 'One text file (.txt)':
+          if ocr_box:
+              texts, nbPages = images_to_txt(path, languages[option])
+              totalPages = "Pages: "+str(nbPages)+" in total"
+              text_data_f = "\n\n".join(texts)
+          else:
+              text_data_f, nbPages = convert_pdf_to_txt_file(pdf_file)
+              totalPages = "Pages: "+str(nbPages)+" in total"
 
-        st.info(totalPages)
-        st.download_button("Download txt file", text_data_f)
-    else:
-        if ocr_box:
-            text_data, nbPages = images_to_txt(path, languages[option])
-            totalPages = "Pages: "+str(nbPages)+" in total"
-        else:
-            text_data, nbPages = convert_pdf_to_txt_pages(pdf_file)
-            totalPages = "Pages: "+str(nbPages)+" in total"
-        st.info(totalPages)
-        zipPath = save_pages(text_data)
-        # download text data   
-        with open(zipPath, "rb") as fp:
-            btn = st.download_button(
-                label="Download ZIP (txt)",
-                data=fp,
-                file_name="pdf_to_txt.zip",
-                mime="application/zip"
-            )
-
-    
-    
+          st.info(totalPages)
+          st.download_button("Download txt file", text_data_f)
+      else:
+          if ocr_box:
+              text_data, nbPages = images_to_txt(path, languages[option])
+              totalPages = "Pages: "+str(nbPages)+" in total"
+          else:
+              text_data, nbPages = convert_pdf_to_txt_pages(pdf_file)
+              totalPages = "Pages: "+str(nbPages)+" in total"
+          st.info(totalPages)
+          zipPath = save_pages(text_data)
+          # download text data   
+          with open(zipPath, "rb") as fp:
+              btn = st.download_button(
+                  label="Download ZIP (txt)",
+                  data=fp,
+                  file_name="pdf_to_txt.zip",
+                  mime="application/zip"
+              )
