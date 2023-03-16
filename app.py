@@ -20,7 +20,7 @@ html_temp = """
             """
 
 # st.markdown("""
-#     ## :outbox_tray: PDF to Text Converter
+#     ## :outbox_tray: Upload Payslip
     
 # """)
 # st.markdown(html_temp.format("rgba(55, 53, 47, 0.16)"),unsafe_allow_html=True)
@@ -45,7 +45,7 @@ with st.sidebar:
     st.markdown(html_temp.format("rgba(55, 53, 47, 0.16)"),unsafe_allow_html=True)
     st.markdown("""
     # How does it work?
-    Simply load your Payslip in PDF format and save it as a text file.
+    Simply load your Payslip in PDF format and download it as text or csv file
     """)
     st.markdown(html_temp.format("rgba(55, 53, 47, 0.16)"),unsafe_allow_html=True)
     
