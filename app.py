@@ -39,16 +39,13 @@ with st.sidebar:
         "How do you want your output text?",
         ('Text file (.txt)', 'CSV file(.csv)'),
 	    ocr_box = st.checkbox('Enable OCR (scanned document)')
-	    
-st.markdown(html_temp.format("rgba(55, 53, 47, 0.16)"),unsafe_allow_html=True)
-st.markdown("""
- # How does it work?
-Simply load your Payslip as PDF and convert it to single-page or multi-page text.""")
-st.markdown(html_temp.format("rgba(55, 53, 47, 0.16)"),unsafe_allow_html=True)
-   
-
-pdf_file = st.file_uploader("Load your Payslip", type="pdf")
-hide="""
+	    st.markdown(html_temp.format("rgba(55, 53, 47, 0.16)"),unsafe_allow_html=True)
+	    st.markdown("""
+	    # How does it work?
+	    Simply load your Payslip as PDF and convert it to single-page or multi-page text.""")
+	    st.markdown(html_temp.format("rgba(55, 53, 47, 0.16)"),unsafe_allow_html=True)
+	    pdf_file = st.file_uploader("Load your Payslip in pdf format", type="pdf")
+	    hide="""
 <style>
 footer{
 	visibility: hidden;
