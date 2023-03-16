@@ -120,7 +120,7 @@ footer{
 st.markdown(hide, unsafe_allow_html=True)	    
 if textOutput == 'CSV file(.csv)':
     df = pd.read_csv(txt_file, delimiter='\t')
-    df.to_csv('output.csv', index=False)
+    data = df.to_csv('output.csv', index=False)
     st.success('File converted successfully!')
 st.download_button("Download Payslip as csv file", data)
      
