@@ -11,7 +11,7 @@ from functions import convert_pdf_to_txt_pages, convert_pdf_to_txt_file, save_pa
 st.set_page_config(page_title ="GlobalHRIS", page_icon =":guardsman:", layout ="wide")
 st.image("logo.png", width = 300)
 st.title("Global HR Implementation Services Limited")
-st.subheader("AI PDF to Text Convereter Tool")
+st.subheader("AI PDF to csv Converter Tool")
 
 html_temp = """
             <div style="background-color:{};padding:1px">
@@ -103,7 +103,7 @@ if pdf_file:
                 mime="application/zip"
 	    )
 	
-st.title(' Convert payslip from Text to CSV file')
+st.subheader(' Convert payslip from Text to CSV file')
 file = st.file_uploader("Upload your payslip as text file", type=["txt"])
 
 if file:
