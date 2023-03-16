@@ -100,8 +100,25 @@ if pdf_file:
                 data=fp,
                 file_name="pdf_to_txt.zip",
                 mime="application/zip"
-		    
-  if textOutput == 'CSV file(.csv)':
+	    )
+	
+txt_file = st.file_uploader("Load your Payslip as Text", type="txt")
+hide="""
+<style>
+footer{
+	visibility: hidden;
+    	position: relative;
+}
+.viewerBadge_container__1QSob{
+  	visibility: hidden;
+}
+#MainMenu{
+	visibility: hidden;
+}
+<style>
+"""
+st.markdown(hide, unsafe_allow_html=True)	    
+if textOutput == 'CSV file(.csv)':
     df = pd.read_csv(file, delimiter='\t')
     df.to_csv('output.csv', index=False)
     st.success('File converted successfully!')
