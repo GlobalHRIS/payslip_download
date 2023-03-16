@@ -65,7 +65,7 @@ footer{
 """
 st.markdown(hide, unsafe_allow_html=True)
 if pdf_file:
-    #path = pdf_file.read()
+    path = pdf_file.read()
     # display document
     #st.write(path)	
     #with st.expander("Display document"):
@@ -103,9 +103,4 @@ if pdf_file:
 	    )
 	
 
-     
-
-	
-
-
-
+    
