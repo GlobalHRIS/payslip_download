@@ -66,7 +66,7 @@ st.markdown(hide, unsafe_allow_html=True)
 if pdf_file:
     path = pdf_file.read()
     # display document
-    st.write(pdf_file)	
+    st.write(path)	
     #with st.expander("Display document"):
         #displayPDF(path)
     if ocr_box:
