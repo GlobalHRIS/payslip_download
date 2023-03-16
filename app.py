@@ -122,11 +122,7 @@ if textOutput == 'CSV file(.csv)':
     df = pd.read_csv(txt_file, delimiter='\t')
     df.to_csv('output.csv', index=False)
     st.success('File converted successfully!')
-    with open(txt_file, 'rb') as f:
-      data = f.read()
-      b64 = base64.b64encode(data).decode('utf-8')
-      href = f'<a href="data:application/octet-stream;base64,{b64}" download="output.csv">Download CSV file</a>'
-      st.download_button("Download Payslip as csv file", data)
+st.download_button("Download Payslip as csv file", data)
      
 
 	
