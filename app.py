@@ -8,7 +8,7 @@ from functions import convert_pdf_to_txt_pages, convert_pdf_to_txt_file, save_pa
 
 # Streamlit Dashboard          
 st.set_page_config(page_title ="GlobalHRIS", page_icon =":guardsman:", layout ="wide")
-st.image("logo.png", width = 200)
+st.image("logo.png", width = 300)
 st.title("Global HR Implementation Services Limited")
 st.subheader("Payslip PDF to Text file")
 
@@ -19,12 +19,12 @@ html_temp = """
             """
 
 # st.markdown("""
-#     ## :outbox_tray: Text data extractor: PDF to Text
+#     ## :outbox_tray: Convert PDF to Text
     
 # """)
 # st.markdown(html_temp.format("rgba(55, 53, 47, 0.16)"),unsafe_allow_html=True)
 st.markdown("""
-    ## Text data extractor: PDF to Text
+    ## Convert Your Payslip from PDF to Text
     
 """)
 languages = {
