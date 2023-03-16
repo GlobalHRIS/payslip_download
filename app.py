@@ -42,8 +42,8 @@ with st.sidebar:
 	    
     st.markdown(html_temp.format("rgba(55, 53, 47, 0.16)"),unsafe_allow_html=True)
     st.markdown("""
-	# How does it work?
-	 Simply load your Payslip as PDF and convert it to single-page or multi-page text.""")
+    # How does it work?
+    Simply load your Payslip as PDF and convert it to single-page or multi-page text.""")
     st.markdown(html_temp.format("rgba(55, 53, 47, 0.16)"),unsafe_allow_html=True)
 	    
 pdf_file = st.file_uploader("Load your Payslip in pdf format", type="pdf")
