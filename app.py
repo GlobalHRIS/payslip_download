@@ -44,7 +44,7 @@ with st.sidebar:
     st.markdown(html_temp.format("rgba(55, 53, 47, 0.16)"),unsafe_allow_html=True)
     st.markdown("""
     # How does it work?
-    Simply load your PDF and convert it to single-page or multi-page text.
+    Simply load your Payslip in PDF format and save it as a text file.
     """)
     st.markdown(html_temp.format("rgba(55, 53, 47, 0.16)"),unsafe_allow_html=True)
     
@@ -65,11 +65,11 @@ footer{
 """
 st.markdown(hide, unsafe_allow_html=True)
 if pdf_file:
-    path = pdf_file.read()
+    #path = pdf_file.read()
     # display document
     #st.write(path)	
-    with st.expander("Display document"):
-        displayPDF(path)
+    #with st.expander("Display document"):
+        #displayPDF(path)
     if ocr_box:
         option = st.selectbox('Select the document language', list(languages.keys()))
     # pdf to text
