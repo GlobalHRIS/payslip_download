@@ -66,8 +66,9 @@ st.markdown(hide, unsafe_allow_html=True)
 if pdf_file:
     path = pdf_file.read()
     # display document
-    with st.expander("Display document"):
-        displayPDF(path)
+    st.write(pdf_file)	
+    #with st.expander("Display document"):
+        #displayPDF(path)
     if ocr_box:
         option = st.selectbox('Select the document language', list(languages.keys()))
     # pdf to text
