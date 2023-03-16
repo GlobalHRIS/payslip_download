@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import base64
 
 def convert_to_csv(file):
     # read text file into pandas dataframe
@@ -11,16 +10,6 @@ def convert_to_csv(file):
 
     # display success message
     st.success('File converted successfully!')
-
-    return 'output.csv'
-
-# function to create download link
-def get_download_link(file):
-    with open(file, 'rb') as f:
-        data = f.read()
-        b64 = base64.b64encode(data).decode('utf-8')
-        href = f'<a href="data:application/octet-stream;base64,{b64}" download="output.csv">Download CSV file</a>'
-    return href
 
 # Streamlit app
 def app():
@@ -33,7 +22,6 @@ def app():
     # convert file to csv on button click
     if st.button("Convert to CSV"):
         if file is not None:
-            file_path = convert_to_csv(file)
-            st.markdown(get_download_link(file_path), unsafe_allow_html=True)
+            convert_to_csv(file)
         else:
             st.warning("Please upload a text file first.")
